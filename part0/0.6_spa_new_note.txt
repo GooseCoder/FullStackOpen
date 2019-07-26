@@ -1,0 +1,21 @@
+note over browser:
+The browser has all the dependencies 
+and DOM objects loaded and ready to use.
+The user adds a note using the text input 
+and press submit.
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa {payload:{"content":note.value,"date":"2019-07..."}}
+
+note over browser:
+The note is added locally before a 
+response was received from the server
+and renders the list again.
+end note
+
+note over server:
+The server adds the note data into the note list 
+inside the data storage
+end note
+
+server-->browser: HTML-code 201: {"message":"note created"}
